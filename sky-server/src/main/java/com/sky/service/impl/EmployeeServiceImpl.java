@@ -75,10 +75,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setStatus(StatusConstant.ENABLE);
         //设置密码，默认密码123456，需要进行md5加密处理
         employee.setPassword(DigestUtils.md5DigestAsHex(("123456").getBytes()));
+        /*
         employee.setCreateTime(LocalDateTime.now());
         employee.setUpdateTime(LocalDateTime.now());
         employee.setCreateUser(BaseContext.getCurrentId());
         employee.setUpdateUser(BaseContext.getCurrentId());
+        */
         employeeMapper.insert(employee);
     }
 
@@ -113,8 +115,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void update(EmployeeDTO employeeDTO) {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
+        /*
         employee.setUpdateTime(LocalDateTime.now());
         employee.setUpdateUser(BaseContext.getCurrentId());
+        */
         employeeMapper.updateById(employee);
     }
 
@@ -125,8 +129,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new AccountNotFoundException(MessageConstant.ACCOUNT_NOT_FOUND);
         }
         employee.setStatus(status);
+        /*
         employee.setUpdateTime(LocalDateTime.now());
         employee.setUpdateUser(BaseContext.getCurrentId());
+         */
         employeeMapper.updateById(employee);
     }
 }

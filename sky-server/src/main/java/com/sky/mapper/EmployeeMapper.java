@@ -26,7 +26,8 @@ public interface EmployeeMapper {
      */
     @AutoFill(OperationType.INSERT)
     @Insert("insert into employee (id_number,username, name, password, phone, sex, status, create_time, update_time, create_user, update_user)" +
-            " values(#{idNumber}, #{username}, #{name}, #{password}, #{phone}, #{sex}, #{status}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser})")
+            " values" +
+            "(#{idNumber}, #{username}, #{name}, #{password}, #{phone}, #{sex}, #{status}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser})")
     void insert(Employee employee);
 
 
@@ -51,5 +52,5 @@ public interface EmployeeMapper {
       * @param employee
       */
      @AutoFill(OperationType.UPDATE)
-    void updateById(Employee employee);
+     void updateById(Employee employee);
 }

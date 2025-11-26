@@ -7,8 +7,13 @@ sky:
     username: root
     password: root
 
-    redis:
-      host: 118.31.10.100
-      port: 6379
-      password: 050720
-      database: 10
+  redis:
+    host: localhost
+    port: 6379
+    password: 000000
+    database: 10
+
+  wechat:
+    secret: 90280898d96b5bd439eb79c5d450d243
+    appid: wxc6e8d13478018daa
+

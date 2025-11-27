@@ -122,6 +122,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.updateById(employee);
     }
 
+    /**
+     * 启用禁用员工账号
+     * @param status
+     * @param id
+     */
     @Override
     public void startOrStop(Integer status, Long id) {
         Employee employee = employeeMapper.selectById(id);

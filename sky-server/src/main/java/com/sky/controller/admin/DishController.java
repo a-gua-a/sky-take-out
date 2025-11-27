@@ -122,4 +122,6 @@ public class DishController {
         dishMapper.update(dish);
         return Result.success();
     }
+
+
 }

@@ -60,10 +60,10 @@ public interface DishMapper {
     Page<DishVO> pageQuery(DishPageQueryDTO dishPageQueryDTO);
 
      /**
-      * 根据分类id查询菜品
-      * @param categoryId
+      * 动态条件查询菜品
+      * @param dish
       * @return
       */
-    @Select("select * from dish where category_id = #{categoryId}")
-    List<Dish> getByCategoryId(Long categoryId);
+    List<Dish> list(Dish dish);
+
 }

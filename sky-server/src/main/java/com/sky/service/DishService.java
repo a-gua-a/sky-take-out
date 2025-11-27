@@ -10,15 +10,38 @@ import java.util.List;
 
 public interface DishService {
 
+    /**
+     * 新增菜品
+     */
     void save(DishDTO dishDTO);
 
+    /**
+     * 更新菜品
+     */
     void update(DishDTO dishDTO);
 
+    /**
+     * 根据id查询菜品
+     */
     DishVO getById(Long id);
 
+    /**
+     * 批量删除菜品
+     */
     void deleteBatch(List<Long> ids);
 
+    /**
+     * 分页查询菜品
+     */
     PageResult page(DishPageQueryDTO dishPageQueryDTO);
 
+    /**
+     * 根据分类id查询菜品
+     */
     List<Dish> getByCategoryId(Long categoryId);
+
+    /**
+     * 条件查询菜品和口味
+     */
+    List<DishVO> listWithFlavor(Dish dish);
 }

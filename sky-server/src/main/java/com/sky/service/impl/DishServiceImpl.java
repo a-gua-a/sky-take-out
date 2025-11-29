@@ -27,7 +27,9 @@ import java.util.List;
 public class DishServiceImpl implements DishService {
     @Autowired
     private DishMapper dishMapper;
+    @Autowired
     private DishFlavorMapper dishFlavorMapper;
+    @Autowired
     private CategoryMapper categoryMapper;
 
 

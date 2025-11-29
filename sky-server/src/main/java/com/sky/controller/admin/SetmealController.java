@@ -6,6 +6,7 @@ import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.SetmealService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin/setmeal")
+@Api(tags = "管理员端套餐接口")
 public class SetmealController {
 
     @Autowired
@@ -54,8 +56,11 @@ public class SetmealController {
         return Result.success();
     }
 
+    /**
+     * 分页查询套餐
+     */
     @GetMapping("/page")
-    public Result<PageResult> pageQuery(@RequestBody SetmealPageQueryDTO setmealPageQueryDTO) {
+    public Result<PageResult> pageQuery(SetmealPageQueryDTO setmealPageQueryDTO) {
         PageResult pageResult = setmealService.page(setmealPageQueryDTO);
         return Result.success(pageResult);
     }

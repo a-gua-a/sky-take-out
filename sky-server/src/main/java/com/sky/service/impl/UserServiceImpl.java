@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
             userMapper.insert(user);
         }
 
-        return null;
+        return user;
     }
 
     private String getOpenid(String code){

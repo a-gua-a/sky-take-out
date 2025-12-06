@@ -54,4 +54,9 @@
             <if test="dishFlavor != null">and dish_flavor = #{dishFlavor}</if>
         </where>
     </delete>
+
+    <!-- 删除用户购物车 -->
+    <delete id="deleteByUserId" parameterType="java.lang.Long">
+        delete from shopping_cart where user_id = #{userId}
+    </delete>
 </mapper>
